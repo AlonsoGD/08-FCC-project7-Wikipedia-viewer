@@ -15,17 +15,30 @@
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="pagelayout">
     <header>
-        WIKIPEDIA<br>Viewer
+        <img src="img\wikiLogo.png" alt="wikipedia logo" class="wikilogo responsiveimg">
+        <div>
+            <h1>
+                <div class="wikipediatitle"><span class="supercapital">W</span>IKIPEDI<span class="supercapital">A</span></div>
+                <div>VIEWER</div>
+            </h1>
+        </div>
     </header>
     <main>
-        <input type="text" id="searchBox" value="" placeholder="Search Wikipedia topic">
-        <button class="fa fa-search" aria-hidden="true"></button>
-        <div><i class="fa fa-info-circle" aria-hidden="true"></i><span> Press search button without any keywork in the searchbox and you will be redirected to a random Wikipedia article</span></div>
+        <form class="searchboxrow inputbox" autocomplete="off">
+            <div><input type="search" id="searchBox" value="" placeholder=""></div>
+            <!-- <div><button type="submit" class="fa fa-search del" aria-hidden="true"></button></div> -->
+        </form> 
+        <div class="inforow">
+            <i class="fa fa-info-circle" aria-hidden="true"></i><span class="tooltip"> Click <a href="https://es.wikipedia.org/wiki/Special:Random" target="_blank">this</a> to find a random Wikipedia article</span>
+        </div>
+        <div class="wikiarticles">
+
+        </div>
     </main>
     <footer>
-
+        <span>This is the footer</span>
     </footer>
 </body>
 </html>

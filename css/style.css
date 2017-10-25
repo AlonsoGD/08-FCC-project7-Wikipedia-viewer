@@ -1,3 +1,116 @@
+.pagelayout {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% auto 30px;
+  justify-items: center;
+  align-items: center;
+  text-align: center; }
 
+h1 {
+  font-size: 24pt;
+  margin: 0px;
+  text-shadow: 2px 2px 3px black; }
+
+body {
+  font-family: Montserrat;
+  font-size: 12pt;
+  color: #ececec;
+  background-color: #363636; }
+
+header {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  padding: 30px;
+  font-family: garamond, Times, serif; }
+
+main {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px auto auto;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-family: Montserrat; }
+
+footer {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3; }
+
+button {
+  margin: 10px; }
+
+input {
+  height: 40px;
+  width: 20%;
+  border-radius: 5px;
+  background: url("../img/searchicon.png") no-repeat 0 0;
+  background-position-x: center;
+  background-color: transparent;
+  font-size: 12pt;
+  font-family: Montserrat;
+  color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  outline: none;
+  border: 0px solid #b9b9b9;
+  -webkit-transition: all 0.40s ease-in-out;
+  -moz-transition: all 0.40s ease-in-out;
+  -ms-transition: all 0.40s ease-in-out;
+  -o-transition: all 0.40s ease-in-out; }
+
+input:focus, input:hover {
+  color: white;
+  background: none;
+  background-color: #585757;
+  box-shadow: 0px 0px 15px #51cbee;
+  border: 1px solid #b9b9b9;
+  width: 100%; }
+
+a {
+  color: #66baff; }
+
+a:visited {
+  color: #bb00bb; }
+
+a:hover {
+  color: blue; }
+
+.searchboxrow {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1; }
+
+.inforow {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  padding: 30px; }
+
+.responsiveimg {
+  max-width: 100%;
+  height: auto; }
+
+.wikilogo {
+  max-width: 80%; }
+
+.supercapital {
+  font-size: 48pt; }
+
+.wikipediatitle {
+  font-size: 36pt;
+  letter-spacing: 3px; }
+
+@media (max-width: 992px) {
+  main {
+    grid-template-rows: 50px auto auto; } }
 
 /*# sourceMappingURL=style.css.map */
