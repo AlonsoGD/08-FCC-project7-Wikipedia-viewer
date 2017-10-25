@@ -87,6 +87,13 @@ a:visited {
 a:hover {
   color: blue; }
 
+ul {
+  list-style-type: none;
+  padding: 0; }
+
+.wikicontainer {
+  margin: 20px; }
+
 .searchboxrow {
   grid-column-start: 1;
   grid-column-end: 1;
@@ -97,8 +104,16 @@ a:hover {
   grid-column-start: 1;
   grid-column-end: 1;
   grid-row-start: 2;
-  grid-row-end: 2;
-  padding: 30px; }
+  grid-row-end: 2; }
+
+.wikiarticlesgrid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  grid-auto-rows: 200px;
+  grid-gap: 10px; }
 
 .responsiveimg {
   max-width: 100%;
