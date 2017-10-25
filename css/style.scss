@@ -138,16 +138,19 @@ ul {
     grid-row-end:2;
 }
 
-.wikiarticlesgrid{
+.wikiarticlesgrid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-    grid-auto-rows: 200px;
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 20px;
+    max-width: 1500px;
 }
 
+.wikiarticle {
+    background: rgb(116, 116, 116);
+    padding: 20px;
+    text-align: justify;
+}
 
 .tooltip {
     
