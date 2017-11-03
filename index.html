@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wikipedia Viewer</title>
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+    <!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"> -->
     <!-- Monsterrat font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!-- Font Awesome -->
@@ -26,14 +26,14 @@
         </div>
     </header>
     <main>
-        <form class="searchboxrow inputbox" autocomplete="off">
+        <form id="form" class="searchboxrow inputbox" autocomplete="off">
             <div><input type="search" id="searchBox" value="" placeholder=""></div>
         </form> 
         <div class="inforow">
             <i class="fa fa-info-circle" aria-hidden="true"></i><span class="tooltip"> Click <a href="https://es.wikipedia.org/wiki/Special:Random" target="_blank">this</a> to find a random Wikipedia article</span>
         </div>
         <div class="wikicontainer">
-            <ul class="wikiarticlesgrid">
+            <ul id="wikilist" class="wikiarticlesgrid">
             </ul>
         </div>
     </main>
