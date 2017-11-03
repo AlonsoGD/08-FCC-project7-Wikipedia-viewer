@@ -94,30 +94,29 @@ input {
 
 }
 
-input:focus {
-    color: white;
-    background: center;
-    background-color: rgb(88, 87, 87);
-    box-shadow: 0px 0px 15px rgba(81, 203, 238, 1);
-    width: 100%;
-    //border: 1px solid rgb(181, 227, 240);
-}
+    input:focus {
+        color: white;
+        background: center;
+        background-color: rgb(88, 87, 87);
+        box-shadow: 0px 0px 15px rgba(81, 203, 238, 1);
+        width: 100%;
+    }
 
-input:hover {
-    width: 100%;
-}
+    input:hover {
+        width: 100%;
+    }
 
 a {
     color: rgb(102, 186, 255);
 }
 
-a:visited {
-    color: rgb(245, 168, 245);
-}
+    a:visited {
+        color: rgb(245, 168, 245);
+    }
 
-a:hover {
-    color: blue;
-}
+    a:hover {
+        color: blue;
+    }
 
 ul {
     list-style-type: none;
@@ -151,23 +150,28 @@ ul {
     max-width: 1500px;
 }
 
-.wikiarticle {
-    background: rgb(116, 116, 116);
-    padding: 15px;
-    text-align: justify;
-    
-    -webkit-transition: box-shadow 0.2s ease-in-out;
-    -moz-transition: box-shadow 0.2s ease-in-out;
-    -ms-transition: box-shadow 0.2s ease-in-out;
-    -o-transition: box-shadow 0.2s ease-in-out;
+    .wikiarticle {
+        background: rgb(116, 116, 116);
+        padding: 15px;
+        text-align: justify;
+        
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+    }
 
-}
+        .wikiarticle h2 {
+            text-align: left;
+        }
 
-.wikiarticle:hover {
-    box-shadow: 4px 0 0 rgb(0, 247, 255) inset,
-                2px 2px 10px black;
+        .wikiarticle:hover {
+            box-shadow: 4px 0 0 rgb(0, 247, 255) inset,
+                        2px 2px 10px black;
+                        
+            background: rgb(24, 23, 78);
 
-}
+        }
 
 .wikilink {
 
