@@ -55,10 +55,9 @@
         var wikiList = document.getElementById("wikilist");
         wikilist.innerHTML = "";   
     }
-    function searchFormListener() {
+    function searchListener() {
         var searchForm = document.getElementById("searchform");
         searchForm.addEventListener("submit", function(event){
-            var searchBox = document.getElementById("searchBox");
             clearSearchResults();
             wikiApiCall(getSearchboxValue());
             document.activeElement.blur();
@@ -66,6 +65,6 @@
         });
     }
 
-    searchFormListener();
+    searchListener();
 
 });
