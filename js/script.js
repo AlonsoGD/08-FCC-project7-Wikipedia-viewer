@@ -7,7 +7,7 @@
             format: "json",
             origin: "*",
             search: searchtext,
-            limit: 16,
+            limit: 20,
             };
     
         var esc = encodeURIComponent;
@@ -26,18 +26,23 @@
                 var resp = JSON.parse(request.response);
                 showArticles(resp);     
             } else {
-                console.log("Server reached, but returned an error")
+                alert("Server reached, but returned an error")
             }
         };
     
         function requestError() {
-            console.log("There was a connection error");
+            alert("There was a connection error");
         }
     
         function showArticles(r) {
             var wikiList = document.getElementById("wikilist");   
             for (var i = 0; i < r[1].length; i++) {
-                wikilist.innerHTML += '<li class="wikiarticle"><h2><a href="' + r[3][i] + '" target="_blank">' + r[1][i]+ '</a></h2><i>' + r[2][i] + '</i></li>';
+                var adresses = r[3][i];
+                var titles = r[1][i];
+                var summaries = r[2][i];
+                console.log(adresses);
+                var liElement = '<li class="wikiarticle"><h2><a href="' + adresses + '" target="_blank">' + titles + '</a></h2><i>' + summaries + '</i></li>';
+                wikilist.innerHTML += liElement;
             }
         }
     };    
@@ -45,10 +50,15 @@
         var searchBoxValue = document.getElementById("searchBox").value;
         return searchBoxValue;
     };
-      
-    document.getElementById("searchform").addEventListener("search", function(event){
-        console.log("Test");
+    function clearSearchResults() {
+        var wikiList = document.getElementById("wikilist");
+        wikilist.innerHTML = "";   
+    }
+    
+    //Search box event listener.
+    document.getElementById("searchform").addEventListener("submit", function(event){
+        clearSearchResults();
         wikiApiCall(getSearchboxValue());
-
+        event.preventDefault();
     });
 });
