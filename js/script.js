@@ -1,4 +1,5 @@
  document.addEventListener("DOMContentLoaded", function(event) {
+       
     function wikiApiCall(searchtext) {
         var request = new XMLHttpRequest();
         var apiEndpoint = "https://en.wikipedia.org/w/api.php";
@@ -54,11 +55,17 @@
         var wikiList = document.getElementById("wikilist");
         wikilist.innerHTML = "";   
     }
-    
-    //Search box event listener.
-    document.getElementById("searchform").addEventListener("submit", function(event){
-        clearSearchResults();
-        wikiApiCall(getSearchboxValue());
-        event.preventDefault();
-    });
+    function searchFormListener() {
+        var searchForm = document.getElementById("searchform");
+        searchForm.addEventListener("submit", function(event){
+            var searchBox = document.getElementById("searchBox");
+            clearSearchResults();
+            wikiApiCall(getSearchboxValue());
+            searchBox.blur();
+            event.preventDefault();
+        });
+    }
+
+    searchFormListener();
+
 });
