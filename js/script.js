@@ -46,7 +46,7 @@
         return searchBoxValue;
     };
       
-    document.getElementById("searchBox").addEventListener("search", function(event){
+    document.getElementById("searchform").addEventListener("search", function(event){
         console.log("Test");
         wikiApiCall(getSearchboxValue());
 
