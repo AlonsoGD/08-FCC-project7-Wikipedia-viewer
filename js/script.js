@@ -40,8 +40,8 @@
                 var adresses = r[3][i];
                 var titles = r[1][i];
                 var summaries = r[2][i];
-                console.log(adresses);
-                var liElement = '<li class="wikiarticle"><h2><a href="' + adresses + '" target="_blank">' + titles + '</a></h2><i>' + summaries + '</i></li>';
+                //added a onClick property so the entire li is clickeable
+                var liElement = "<li onClick='window.open(\"" + adresses + "\", \"_blank\")' class='wikiarticle'><h2><a target='_blank' href='" + adresses + "'>" + titles + "</a></h2><i>" + summaries + "</i></li>";             
                 wikilist.innerHTML += liElement;
             }
         }
