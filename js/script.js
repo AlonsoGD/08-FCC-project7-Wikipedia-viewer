@@ -61,7 +61,7 @@
             var searchBox = document.getElementById("searchBox");
             clearSearchResults();
             wikiApiCall(getSearchboxValue());
-            searchBox.blur();
+            document.activeElement.blur();
             event.preventDefault();
         });
     }
