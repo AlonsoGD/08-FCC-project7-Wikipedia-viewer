@@ -1,5 +1,6 @@
  document.addEventListener("DOMContentLoaded", function(event) {
-       
+    var searchDone = false;   
+
     function wikiApiCall(searchtext) {
         var request = new XMLHttpRequest();
         var apiEndpoint = "https://en.wikipedia.org/w/api.php";
@@ -46,25 +47,96 @@
                 wikilist.innerHTML += liElement;
             }
         }
-    };    
+    };
+
     function getSearchboxValue() {
         var searchBoxValue = document.getElementById("searchBox").value;
         return searchBoxValue;
     };
+
     function clearSearchResults() {
         var wikiList = document.getElementById("wikilist");
         wikilist.innerHTML = "";   
-    }
-    function searchListener() {
-        var searchForm = document.getElementById("searchform");
-        searchForm.addEventListener("submit", function(event){
-            clearSearchResults();
-            wikiApiCall(getSearchboxValue());
-            document.activeElement.blur();
-            event.preventDefault();
-        });
+    };
+
+    function addClass(elements, myClass) {
+        // if there are no elements, we're done
+        if (!elements) { return; }
+    
+        // if we have a selector, get the chosen elements
+        if (typeof(elements) === 'string') {
+        elements = document.querySelectorAll(elements);
+        }
+    
+        // if we have a single DOM element, make it an array to simplify behavior
+        else if (elements.tagName) { elements=[elements]; }
+    
+        // add class to all chosen elements
+        for (var i=0; i<elements.length; i++) {
+    
+        // if class is not already found
+        if ( (' '+elements[i].className+' ').indexOf(' '+myClass+' ') < 0 ) {
+    
+            // add class
+            elements[i].className += ' ' + myClass;
+        }
+        }
     }
 
-    searchListener();
+    function animationsIn() {
+        var changingElements = [
+            document.getElementById('id-header'), 
+            document.getElementById('id-wikipediatitle'), 
+            document.getElementById('id-supercapital1'),
+            document.getElementById('id-supercapital2'),
+            document.getElementById('id-viewer'),
+            document.getElementById('id-wikilogo'),
+            document.getElementById('id-searchrow'),
+            document.getElementById('wikilist')
+        ];
+
+        var newClasses = [
+            'header-small',
+            'wikipediatitle-small',
+            'supercapital-small',
+            'supercapital-small',
+            'viewer-small',
+            'wikilogo-small',
+            'searchrow-small',
+            'wikiarticlesgrid-small'
+        ]
+
+        var oldClasses = [
+            'header',
+            'wikipediatitle',
+            'supercapital',
+            'supercapital',
+            'viewer',
+            'wikilogo',
+            'searchrow',
+            'wikiarticlesgrid'
+        ]
+
+
+        for (var i = 0; i < changingElements.length; i++) {
+            addClass(changingElements[i], newClasses[i]);
+        }
+    };
+  
+    function main() {
+        var searchForm = document.getElementById("searchform");
+        var wikilist = document.getElementById('wikilist');
+
+        searchForm.addEventListener("submit", function(event){
+            clearSearchResults();
+            wikiApiCall(getSearchboxValue());    
+            animationsIn();
+            document.activeElement.blur();
+            searchDone = true;
+            event.preventDefault();
+        });
+    };
+    
+    main();
 
 });

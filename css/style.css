@@ -1,31 +1,3 @@
-.wikipediatitle-small {
-  font-size: 12pt;
-  letter-spacing: 3px; }
-
-.supercapital-small {
-  font-size: 13.8pt !important; }
-
-.small {
-  font-size: 9pt; }
-
-.header-small {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  margin-left: auto;
-  margin-top: 10px;
-  font-family: garamond, Times, serif; }
-
-.wikilogo-small {
-  max-width: 60% !important; }
-
-.searchrow-small {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3; }
-
 .pagelayout {
   display: grid;
   grid-template-columns: 10% 80%;
@@ -54,13 +26,28 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   padding: 15px;
-  font-family: garamond, Times, serif; }
+  font-family: garamond, Times, serif;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.header.header-small {
+  margin-left: -90%; }
 
 .searchrow {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 2;
-  grid-row-end: 3; }
+  grid-row-end: 3;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.searchrow.searchrow-small {
+  grid-row-start: 1;
+  grid-row-end: 2; }
 
 main {
   grid-column-start: 1;
@@ -145,16 +132,22 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 20px;
-  max-width: 1920px; }
+  max-width: 1920px;
+  opacity: 0;
+  margin-top: 90%;
+  -webkit-transition: all 0.7s linear;
+  -moz-transition: all 0.7s linear;
+  -o-transition: all 0.7s linear;
+  transition: all 0.7s linear; }
 
 .wikiarticle {
   background: #747474;
   padding: 15px;
   text-align: justify;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out; }
 
 .wikiarticle h2 {
   text-align: left; }
@@ -164,38 +157,74 @@ ul {
   background: #18174e;
   cursor: pointer; }
 
+.wikiarticlesgrid.wikiarticlesgrid-small {
+  margin-top: unset;
+  opacity: 1; }
+
 .responsiveimg {
   max-width: 100%;
   height: auto; }
 
 .wikilogo {
-  max-width: 80%; }
+  max-width: 80%;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
 
-.supercapital, .supercapital-small {
-  font-size: 48pt; }
+.wikilogo.wikilogo-small {
+  max-width: 20% !important; }
+
+.supercapital, .supercapital.supercapital-small {
+  font-size: 48pt;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.supercapital.supercapital-small {
+  font-size: 13.8pt !important; }
 
 .wikipediatitle {
   font-size: 36pt;
+  letter-spacing: 3px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.wikipediatitle.wikipediatitle-small {
+  font-size: 12pt;
   letter-spacing: 3px; }
+
+.viewer {
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+
+.viewer.viewer-small {
+  font-size: 12pt; }
 
 @media (max-width: 992px) {
   .wikicontainer {
     margin: 5px; } }
-@media (max-width: 650px) {
-  .header-small {
+@media (max-width: 1120px) {
+  .header.header-small {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-    margin: unset; }
+    margin: unset;
+    padding: 0; }
 
-  .searchrow-small {
+  .searchrow.searchrow-small {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3; }
 
-  .wikilogo-small {
-    max-width: 40% !important; } }
+  .wikilogo.wikilogo-small {
+    max-width: 20% !important; } }
 
 /*# sourceMappingURL=style.css.map */
