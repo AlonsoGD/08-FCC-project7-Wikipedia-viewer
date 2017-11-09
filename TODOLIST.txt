@@ -1,3 +1,2 @@
 Animations:
-    When the articles are pulled from Wikipeda
-    Move the Image logo, title and the search button to the top left of the page, giving space to the articles.
+    Fade in - fadeout on the wikipedra grid when you do a search after another.

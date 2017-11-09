@@ -1,4 +1,9 @@
  document.addEventListener("DOMContentLoaded", function(event) {
+    //detect browser
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
     var searchDone = false;   
 
     function wikiApiCall(searchtext) {
@@ -117,9 +122,15 @@
             'wikiarticlesgrid'
         ]
 
-
         for (var i = 0; i < changingElements.length; i++) {
             addClass(changingElements[i], newClasses[i]);
+        }
+
+        if (isEdge === true || isIE === true) {
+            document.getElementById('id-header').classList.remove('header-small');
+            document.getElementById('id-wikilogo').classList.remove('wikiarticlesgrid-small');
+            document.getElementById('id-header').classList.add('header-ms-browser');
+            document.getElementById('id-wikilogo').classList.add('wikilogo-small-ms');
         }
     };
   

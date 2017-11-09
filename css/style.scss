@@ -170,12 +170,11 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     grid-auto-rows: 1fr;
-    grid-gap: 20px;
     max-width: 1920px;
 
     opacity: 0;
 
-    margin-top: 90%;
+    margin-top: 100%;
 
     -webkit-transition: all 0.7s linear;
     -moz-transition: all 0.7s linear;
@@ -187,6 +186,7 @@ ul {
         background: rgb(116, 116, 116);
         padding: 15px;
         text-align: justify;
+        margin: 10px;
         
         -webkit-transition: all 0.3s ease-in-out;
         -moz-transition: all 0.3s ease-in-out;
@@ -270,6 +270,15 @@ ul {
     font-size: $fontSize;
 }
 
+.header-ms-browser {
+    margin: unset !important;  
+    padding: 0 !important;
+}
+
+.wikilogo.wikilogo-small-ms {
+    max-width: 10% !important;
+}
+
 @media (max-width: 992px) {
     .wikicontainer {
         margin: 5px;
@@ -295,5 +304,39 @@ ul {
 
     .wikilogo.wikilogo-small {
         max-width: 20% !important;
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    input {
+        width: 5%;
+    }
+        input:focus {
+            width: 20%;
+        }
+
+        input:hover {
+            width: 20%;
+        }
+
+    .wikiarticlesgrid {
+        margin-top: 0;
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    input {
+        width: 5%;
+    }
+        input:focus {
+            width: 20%;
+        }
+
+        input:hover {
+            width: 20%;
+        }
+
+    .wikiarticlesgrid {
+        margin-top: 0;
     }
 }
